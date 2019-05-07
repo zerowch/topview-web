@@ -186,7 +186,10 @@ import changePwd from '@/mixins/changePwd'
 
 export default {
   components: {
-    SweetModal, inputCpnt, Alert, Dropdown
+    SweetModal,
+    inputCpnt,
+    Alert,
+    Dropdown
   },
   mixins: [userCookies, login, signup, changePwd],
   data () {
