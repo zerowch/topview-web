@@ -1,0 +1,133 @@
+.just-audio {
+  &-self {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    padding: 14px;
+    box-sizing: border-box;
+    background-color: #F0F2F8;
+    user-select: none;
+  }
+
+  &-placeholder {
+    height: 69px;
+    width: 100%;
+  }
+
+  &-volume {
+    $volHeight: 7px;
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    min-width: 120px;
+    height: $volHeight;
+    border-radius: $volHeight / 2;
+
+    input {
+      top: -8px;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &-bar {
+      // width: 50%;
+      height: 100%;
+      border-radius: $volHeight / 2;
+      background-color: #3B86FF;
+    }
+  }
+
+  &-ctrl {
+    display: flex;
+    align-items: center;
+
+    > div {
+      margin: 0 10px;
+      background: {
+        image: url(../assets/player-sprite.png);
+        size: 80px;
+      }
+      &:active {
+        opacity: 0.8;
+      }
+    }
+
+    &-play {
+      height: 40px;
+      width: 40px;
+    }
+
+    &-pause {
+      background-position: 40px 0px;
+    }
+
+    &-prev, &-next {
+      width: 26px;
+      height: 15.8px;
+      background-position: 0px -40px;
+    }
+
+    &-prev {
+      transform: rotate(180deg);
+    }
+  }
+  
+  &-ctrl2 {
+    padding: 0 10px;
+  }
+
+  &-details {
+    flex-grow: 1;
+    padding: 0 18px;
+
+    &-text {
+      display: flex;
+      justify-content: space-between;
+      height: 17px;
+      font-size: 14px;
+      color: #4D4F5C;
+    }
+  }
+
+  &-progress {
+    &-bar {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 1.5em;
+      align-items: center;
+      user-select: none;
+      // overflow: hidden;
+    }
+    &-background {
+      width: 100%;
+      height: 0.4em;
+      border-radius: 0.2em;
+      overflow: hidden;
+      background-color: #ccc;
+    }
+    &-now {
+      width: 0;
+      height: 100%;
+      border-radius: 0.2em;
+      background-color: #3B86FF;
+    }
+    &-spot {
+      $radius: 1em;
+      position: absolute;
+      left: 0;
+      margin-left: -($radius / 2);
+      width: $radius;
+      height: $radius;
+      border-radius: $radius / 2;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    }
+    &-animate {
+      transition: 0.2s all;
+    }
+  }
+}
